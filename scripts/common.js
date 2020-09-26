@@ -12,7 +12,7 @@ var app = new Vue({
     cHTMLElem: null,
     cardNumber: "1234567890123456",
     cardHolderName: "Имя Ф.",
-    colors: {number: "#00AA00", holder: "#FFFFFF", card: "#000000", throttled: "#FF0000"},
+    colors: {number: "#FFFFFF", holder: "#FFFFFF", card: "#222222", throttled: "#FF0000"},
     throttling: {timer: 0, state: false}
   },
   mounted() {
@@ -57,7 +57,6 @@ var app = new Vue({
     colorChanged: function (pickerEvent) {
       this.colors.throttled = pickerEvent.target.value;
       if (!this.throttling.state) {
-        //alert('nt'+pickerEvent.target.value)
         this.throttling.state = true;
         this.drawText();
         this.throttling.timer = setTimeout(function () {
